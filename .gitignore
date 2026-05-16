@@ -1,0 +1,4 @@
+# Ignore files with sensitive data
+.env
+config.js
+*.keyconfig.js

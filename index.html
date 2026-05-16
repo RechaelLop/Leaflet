@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet – Smart Book Notes Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="leaf-icon">🍃</span>
+                Leaflet
+                <span class="leaf-icon">📘</span>
+            </div>
+            <p class="tagline">Turn any book into actionable notes</p>
+        </header>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label>📖 Book Title</label>
+                <input type="text" id="bookTitle" placeholder="e.g., Atomic Habits" class="input-field">
+            </div>
+            
+            <div class="input-group">
+                <label>✍️ Author Name</label>
+                <input type="text" id="authorName" placeholder="e.g., James Clear" class="input-field">
+            </div>
+
+            <div class="style-selector">
+                <label>🎯 Note Style</label>
+                <select id="noteStyle" class="select-field">
+                    <option value="comprehensive">Comprehensive (Detailed notes)</option>
+                    <option value="actionable">Actionable (Focus on exercises)</option>
+                    <option value="quick">Quick (15-min summary)</option>
+                    <option value="deep">Deep dive (Concept analysis)</option>
+                </select>
+            </div>
+
+            <button id="generateBtn" class="generate-btn">
+                🍃 Generate Leaflet Notes
+            </button>
+        </div>
+
+        <div class="loading" id="loading" style="display:none;">
+            <div class="spinner"></div>
+            <p>Leaflet is analyzing <span id="loadingBook"></span>...</p>
+        </div>
+
+        <div class="results" id="results" style="display:none;">
+            <div class="result-header">
+                <h2 id="resultBookTitle"></h2>
+                <p id="resultAuthor"></p>
+                <button class="copy-btn" id="copyBtn">📋 Copy All Notes</button>
+            </div>
+            
+            <div class="notes-container" id="notesContainer"></div>
+            
+            <button class="new-btn" onclick="resetApp()">➕ Another Book</button>
+        </div>
+
+        <div class="error" id="error" style="display:none;"></div>
+    </div>
+
+    <footer>
+        <p>🍃 Leaflet — Powered by Google Gemini API</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
